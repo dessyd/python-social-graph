@@ -199,22 +199,96 @@ graph.to_json('custom_graph.json')
 
 ## Tests
 
-Exécuter la suite de tests:
+Exécuter les exemples d'utilisation:
 
 ```bash
-# Note: Tests directory removed - use examples instead
 python examples/advanced_usage.py data/input/friends.csv
 ```
 
-Tests inclus:
+Résultat:
 
-- ✅ Fonctionnalités de base
-- ✅ Chargement CSV
-- ✅ Analyse FOAF
-- ✅ Gestion des doublons
-- ✅ Gestion des espaces
-- ✅ Mode unidirectionnel
-- ✅ Export JSON
+```text
+🚀 ======================================================== 🚀
+   EXEMPLES AVANCÉS - Social Graph Manager
+🚀 ======================================================== 🚀
+
+📂 Fichier CSV utilisé: data/input/friends.csv
+
+============================================================
+Exemple 1: Recommandations d'amis
+============================================================
+
+👤 Suggestions d'amis pour Alice:
+Vous pourriez connaître: Eve, Frank, George, Helen
+
+============================================================
+Exemple 2: Analyse du réseau
+============================================================
+
+📊 Statistiques globales:
+  - Total utilisateurs: 9
+  - Total relations: 12
+  - Moyenne d'amis: 2.67
+
+🌟 Utilisateurs les plus connectés:
+  - Eve: 3 amis
+  - Alice: 3 amis
+  - Bob: 3 amis
+  - Charlie: 3 amis
+  - Helen: 3 amis
+
+============================================================
+Exemple 3: Portée du réseau
+============================================================
+
+🔍 Portée du réseau pour chaque utilisateur:
+
+  Alice:
+    - Amis directs: 3
+    - Amis d'amis: 4
+    - Portée totale: 7 personnes
+[... output continues for all 9 users ...]
+
+============================================================
+Exemple 4: Amis communs
+============================================================
+
+👥 Amis communs entre Alice et Bob:
+  Aucun ami commun
+
+============================================================
+Exemple 5: Graphe personnalisé
+============================================================
+
+📱 Graphe de followers (unidirectionnel):
+  Alice suit: Bob, Charlie
+  Bob suit: Alice
+  Charlie suit: David
+
+💾 Graphe exporté vers 'data/output/custom_followers.json'
+
+============================================================
+Exemple 6: Force des connexions
+============================================================
+
+💪 Force des connexions pour Alice:
+  - Charlie: 1 amis communs
+  - David: 1 amis communs
+  - Bob: 0 amis communs
+
+============================================================
+✨ Tous les exemples ont été exécutés!
+============================================================
+```
+
+Exemples inclus:
+
+- ✅ Recommandations d'amis (FOAF)
+- ✅ Analyse du réseau et statistiques
+- ✅ Portée du réseau (amis + FOAF)
+- ✅ Amis communs entre utilisateurs
+- ✅ Graphe personnalisé (unidirectionnel)
+- ✅ Force des connexions
 
 ## API de la classe SocialGraph
 
