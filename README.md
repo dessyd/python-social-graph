@@ -82,9 +82,11 @@ Sortie: `social_graph.json`
 ```text
 📈 Statistiques du graphe:
   - Nombre d'utilisateurs: 9
-  - Nombre de relations: 18
+  - Nombre de relations: 12
   - Mode: bidirectionnel
-  - Moyenne d'amis par utilisateur: 4.00
+  - Moyenne d'amis par utilisateur: 2.67
+  - Maximum d'amis: 3
+  - Minimum d'amis: 2
 ```
 
 #### 3. Générer un rapport FOAF
@@ -102,7 +104,7 @@ Sortie: `social_graph.json`
 ```text
 👤 Informations pour 'Alice':
   - Amis directs (3): Bob, Charlie, David
-  - Amis d'amis (5): Eve, Frank, George, Helen, Ivan
+  - Amis d'amis (4): Eve, Frank, George, Helen
 ```
 
 #### 5. Export GraphML pour visualisation
