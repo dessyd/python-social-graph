@@ -18,8 +18,8 @@ Python social graph analyzer that processes CSV files to analyze friendship netw
 ```
 src/social_graph/
 ├── __init__.py          # Package exports
-├── graph.py             # SocialGraph class (core logic)
-└── cli.py               # Command-line interface
+├── cli.py               # Command-line interface
+└── graph.py             # SocialGraph class (core logic)
 ```
 
 ### Entry Points
