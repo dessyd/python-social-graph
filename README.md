@@ -49,7 +49,7 @@ Le script utilise uniquement des modules Python standards, aucune installation n
 ### Script principal
 
 ```bash
-python main.py <fichier_csv> [options]
+./social-graph <fichier_csv> [options]
 ```
 
 ### Options
@@ -68,7 +68,7 @@ python main.py <fichier_csv> [options]
 #### 1. Import basique avec export JSON
 
 ```bash
-python main.py friends.csv
+./social-graph data/input/friends.csv
 ```
 
 Sortie: `social_graph.json`
@@ -76,7 +76,7 @@ Sortie: `social_graph.json`
 #### 2. Avec statistiques
 
 ```bash
-python main.py friends.csv --stats
+./social-graph data/input/friends.csv --stats
 ```
 
 ```text
@@ -90,13 +90,13 @@ python main.py friends.csv --stats
 #### 3. Générer un rapport FOAF
 
 ```bash
-python main.py friends.csv --foaf-report foaf_report.json --stats
+./social-graph data/input/friends.csv --foaf-report data/output/foaf_report.json --stats
 ```
 
 #### 4. Requête pour un utilisateur spécifique
 
 ```bash
-python main.py friends.csv --query-user Alice
+./social-graph data/input/friends.csv --query-user Alice
 ```
 
 ```text
@@ -108,7 +108,7 @@ python main.py friends.csv --query-user Alice
 #### 5. Export GraphML pour visualisation
 
 ```bash
-python main.py friends.csv --graphml friends.graphml --stats
+./social-graph data/input/friends.csv --graphml data/output/friends.graphml --stats
 ```
 
 Le fichier `.graphml` peut être ouvert avec:
@@ -120,7 +120,7 @@ Le fichier `.graphml` peut être ouvert avec:
 #### 6. Mode unidirectionnel
 
 ```bash
-python main.py friends.csv --no-bidirectional --output graph_unidirectional.json
+./social-graph data/input/friends.csv --no-bidirectional --output data/output/graph_unidirectional.json
 ```
 
 ## Utilisation programmatique
@@ -134,7 +134,7 @@ from social_graph import SocialGraph
 graph = SocialGraph(bidirectional=True)
 
 # Charger depuis CSV
-graph.load_from_csv('friends.csv')
+graph.load_from_csv('data/input/friends.csv')
 
 # Obtenir les amis d'un utilisateur
 friends = graph.get_friends('Alice')
@@ -149,13 +149,13 @@ stats = graph.get_statistics()
 print(f"Total utilisateurs: {stats['total_users']}")
 
 # Export JSON
-graph.to_json('output.json')
+graph.to_json('data/output/my_graph.json')
 
 # Export GraphML (pour visualisation)
-graph.to_graphml('graph.graphml')
+graph.to_graphml('data/output/my_graph.graphml')
 
 # Rapport FOAF
-graph.export_foaf_report('foaf_report.json')
+graph.export_foaf_report('data/output/foaf_report.json')
 ```
 
 ### Ajouter des amitiés manuellement
@@ -200,7 +200,8 @@ graph.to_json('custom_graph.json')
 Exécuter la suite de tests:
 
 ```bash
-python test_social_graph.py
+# Note: Tests directory removed - use examples instead
+python examples/advanced_usage.py data/input/friends.csv
 ```
 
 Tests inclus:
@@ -233,14 +234,25 @@ Tests inclus:
 ## Structure du projet
 
 ```text
-.
-├── .venv/                    # Environnement virtuel
-├── social_graph.py           # Classe principale
-├── main.py                   # Script CLI
-├── test_social_graph.py      # Suite de tests
-├── friends.csv               # Fichier CSV d'exemple
-├── requirements.txt          # Dépendances Python
-├── .gitignore               # Fichiers à ignorer
+python-social-graph/
+├── src/social_graph/        # Package source
+│   ├── __init__.py
+│   ├── cli.py               # Interface CLI
+│   ├── graph.py             # Classe SocialGraph
+│   └── utils/
+├── data/
+│   ├── input/               # Fichiers CSV sources
+│   │   └── friends.csv      # Exemple
+│   └── output/              # Fichiers générés (ignorés par git)
+├── docs/
+│   └── gephi-guide.md       # Guide Gephi
+├── examples/
+│   └── advanced_usage.py    # Exemples d'utilisation
+├── social-graph             # Script wrapper (point d'entrée)
+├── setup.py                 # Configuration du package
+├── pyproject.toml           # Configuration moderne
+├── requirements.txt         # Aucune dépendance requise
+├── CLAUDE.md                # Guide pour Claude Code
 └── README.md                # Ce fichier
 ```
 
