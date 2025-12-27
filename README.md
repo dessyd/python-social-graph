@@ -314,8 +314,7 @@ python-social-graph/
 ├── src/social_graph/        # Package source
 │   ├── __init__.py
 │   ├── cli.py               # Interface CLI
-│   ├── graph.py             # Classe SocialGraph
-│   └── utils/
+│   └── graph.py             # Classe SocialGraph
 ├── data/
 │   ├── input/               # Fichiers CSV sources
 │   │   └── friends.csv      # Exemple
