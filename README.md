@@ -28,7 +28,7 @@ Chaque ligne du fichier CSV représente un utilisateur et ses amis:
 Utilisateur,Ami1,Ami2,Ami3,...
 ```
 
-### Exemple (`friends.csv`):
+### Exemple (`friends.csv`)
 
 ```csv
 Alice,Bob,Charlie,David
@@ -37,6 +37,7 @@ Charlie,Alice,David,George
 ```
 
 **Notes:**
+
 - Les espaces avant/après les noms sont automatiquement supprimés
 - Les doublons sont automatiquement éliminés
 - Les lignes vides sont ignorées
@@ -54,7 +55,7 @@ python main.py <fichier_csv> [options]
 ### Options
 
 | Option | Description |
-|--------|-------------|
+| ------ | ----------- |
 | `--no-bidirectional` | Relations unidirectionnelles (défaut: bidirectionnelles) |
 | `--output <fichier>` | Fichier JSON de sortie (défaut: `social_graph.json`) |
 | `--foaf-report <fichier>` | Génère un rapport FOAF détaillé |
@@ -78,7 +79,7 @@ Sortie: `social_graph.json`
 python main.py friends.csv --stats
 ```
 
-```
+```text
 📈 Statistiques du graphe:
   - Nombre d'utilisateurs: 9
   - Nombre de relations: 18
@@ -98,7 +99,7 @@ python main.py friends.csv --foaf-report foaf_report.json --stats
 python main.py friends.csv --query-user Alice
 ```
 
-```
+```text
 👤 Informations pour 'Alice':
   - Amis directs (3): Bob, Charlie, David
   - Amis d'amis (5): Eve, Frank, George, Helen, Ivan
@@ -111,6 +112,7 @@ python main.py friends.csv --graphml friends.graphml --stats
 ```
 
 Le fichier `.graphml` peut être ouvert avec:
+
 - **Gephi** - Visualisation et analyse de graphes
 - **yEd** - Éditeur de diagrammes
 - **Cytoscape** - Analyse de réseaux biologiques et sociaux
@@ -202,6 +204,7 @@ python test_social_graph.py
 ```
 
 Tests inclus:
+
 - ✅ Fonctionnalités de base
 - ✅ Chargement CSV
 - ✅ Analyse FOAF
@@ -215,7 +218,7 @@ Tests inclus:
 ### Méthodes principales
 
 | Méthode | Description |
-|---------|-------------|
+| ------- | ----------- |
 | `__init__(bidirectional=True)` | Initialise le graphe |
 | `load_from_csv(filepath)` | Charge depuis CSV |
 | `add_friendship(user, friend)` | Ajoute une relation |
@@ -229,7 +232,7 @@ Tests inclus:
 
 ## Structure du projet
 
-```
+```text
 .
 ├── .venv/                    # Environnement virtuel
 ├── social_graph.py           # Classe principale
@@ -277,6 +280,7 @@ graph.to_json('network_data.json')
 ```
 
 Ouvrez le fichier `.graphml` dans Gephi pour:
+
 - Visualiser le réseau social
 - Détecter les communautés
 - Calculer les métriques de centralité

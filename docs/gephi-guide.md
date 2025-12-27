@@ -4,7 +4,7 @@ Ce guide explique comment visualiser votre graphe social dans Gephi.
 
 ## 1. Installation de Gephi
 
-Téléchargez et installez Gephi: https://gephi.org/users/download/
+Téléchargez et installez Gephi: <https://gephi.org/users/download/>
 
 ## 2. Export du graphe
 
@@ -15,6 +15,7 @@ python main.py friends.csv --graphml friends.graphml --stats
 ```
 
 Le fichier `.graphml` contient:
+
 - Les **nœuds** (utilisateurs) avec leurs **labels** (noms)
 - Les **arêtes** (relations d'amitié)
 - Le type de graphe (bidirectionnel ou directionnel)
@@ -106,6 +107,7 @@ python main.py friends.csv --graphml friends.graphml --stats
 ```
 
 Résultats attendus dans Gephi:
+
 - **9 nœuds** (Alice, Bob, Charlie, David, Eve, Frank, George, Helen, Ivan)
 - **18 arêtes** (relations d'amitié)
 - Les nœuds les mieux connectés apparaissent plus grands
@@ -121,18 +123,21 @@ Résultats attendus dans Gephi:
 ## Dépannage
 
 ### Les labels ne s'affichent pas
+
 - Vérifiez que vous avez activé "Afficher les labels" dans l'onglet Apparence
 - Augmentez la taille de la police dans l'onglet Aperçu
 
 ### Le graphe est trop dense
+
 - Augmentez le paramètre "Scaling" dans Force Atlas 2
 - Utilisez une aire plus grande dans Fruchterman Reingold
 
 ### Erreur d'import
+
 - Vérifiez que le fichier `.graphml` est bien formé
 - Réexécutez l'export: `python main.py friends.csv --graphml friends.graphml`
 
 ## Ressources
 
-- Documentation Gephi: https://gephi.org/users/
-- Tutoriels vidéo: https://gephi.org/users/tutorial-visualization/
+- Documentation Gephi: <https://gephi.org/users/>
+- Tutoriels vidéo: <https://gephi.org/users/tutorial-visualization/>
