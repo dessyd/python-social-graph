@@ -1,0 +1,9 @@
+Alice,Bob,Charlie,David
+Bob,Alice,Eve,Frank
+Charlie,Alice,David,George
+David,Alice,Charlie,Helen
+Eve,Bob,Frank,Ivan
+Frank,Bob,Eve
+George,Charlie,Helen
+Helen,David,George,Ivan
+Ivan,Eve,Helen

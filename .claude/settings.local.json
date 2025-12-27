@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "Bash(pip install:*)",
+      "Bash(pip freeze:*)",
+      "Bash(python example.py:*)",
+      "Bash(python:*)",
+      "Bash(chmod:*)",
+      "Bash(ls:*)",
+      "Bash(social-graph:*)",
+      "Bash(tree:*)",
+      "Bash(pip uninstall:*)",
+      "Bash(pip show:*)",
+      "Bash(pip cache:*)",
+      "Bash(./social-graph:*)",
+      "Bash(grep:*)",
+      "Bash(find:*)",
+      "mcp__ide__getDiagnostics",
+      "Bash(cat:*)",
+      "Skill(commit)"
+    ]
+  }
+}

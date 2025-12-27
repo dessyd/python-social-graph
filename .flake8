@@ -1,0 +1,13 @@
+[flake8]
+max-line-length = 100
+exclude =
+    .git,
+    __pycache__,
+    .venv,
+    build,
+    dist,
+    *.egg-info
+
+# Ignore E402 in wrapper script (module import not at top - required for path manipulation)
+per-file-ignores =
+    social-graph:E402
